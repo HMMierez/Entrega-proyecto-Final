@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://previews.123rf.com/images/welcomia/welcomia1601/welcomia160100152/51601769-comerciantes-de-la-divisa-del-fondo-cambio-de-divisas-y-de-comercio-ilustraci%C3%B3n-del-concepto-del.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+  
+  .contenedor {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .grupo-formulario {
+    margin-bottom: 20px;
+  }
+  
+  .etiqueta {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .seleccion, .entrada {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    background-color: #f8f8f8;
+  }
+  
+  .boton {
+    padding: 14px 28px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+  
+  .boton:hover {
+    background-color: #45a049;
+  }
+  
+  .resultado {
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+  }
+
+/* Estilos para los formularios */
+#loginForm,
+#registroForm {
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#registroForm {
+  display: none; /* Inicialmente oculto */
+}
+
+#btnMostrarRegistro,
+#btnMostrarLogin {
+  color: #4CAF50;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#conversor {
+  display: none; /* Inicialmente oculto */
+}
+/* Boton de intrucciones, agregado al final */
+.boton-instrucciones {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .boton-instrucciones:hover {
+    background-color: #0056b3;
+  }
+  
+ 
+  .custom-title {
+    font-size: 24px;
+    color: #716add;
+  }
+  
+  .custom-html-container {
+    font-size: 16px;
+    color: #333;
+    background: #fff 
+  }
+  /* para el botón de Cerrar Sesión */
+.boton-instrucciones {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px; /* Espacio entre el botón y otros elementos */
+}
+
+.boton-instrucciones:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el cuadro de instrucciones (ventana modal) */
+.custom-title {
+    font-size: 24px;
+    color: #716add;
+}
+
+.custom-html-container {
+    font-size: 16px;
+    color: #333;
+    background: #fff;
+    padding: 20px; /* Espacio interior del cuadro */
+    border-radius: 5px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}

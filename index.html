@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversor de Divisas</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="contenedor">
+    <h1>Conversor de Divisas</h1>
+    <!-- formulario de inicio de sesión -->
+    <div id="loginForm">
+      <h2>Iniciar Sesión</h2>
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" class="entrada">
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" class="entrada">
+      <button id="btnIniciarSesion" class="boton">Iniciar Sesión</button>
+      <p>No tienes una cuenta? <a href="#" id="btnMostrarRegistro">Registrarse</a></p>
+    </div>
+    <!--  formulario de registro -->
+    <div id="registroForm" style="display: none;">
+      <h2>Registrarse</h2>
+      <label for="nuevoUsuario">Nuevo Usuario:</label>
+      <input type="text" id="nuevoUsuario" class="entrada">
+      <label for="nuevaContrasena">Nueva Contraseña:</label>
+      <input type="password" id="nuevaContrasena" class="entrada">
+      <button id="btnRegistrarse" class="boton">Registrarse</button>
+      <p>Ya tienes una cuenta? <a href="#" id="btnMostrarLogin">Iniciar Sesión</a></p>
+    </div>
+    <!-- conversor después de iniciar sesión -->
+    <div id="conversor" style="display: none;">
+      <div class="grupo-formulario">
+        <label class="etiqueta">Selecciona la divisa de origen:</label>
+        <select class="seleccion" id="monedaDesde">
+          <option value="ars">Pesos Argentinos (ARS)</option>
+          <option value="usd">Dólares Estadounidenses (USD)</option>
+          <option value="eur">Euros (EUR)</option>
+          <option value="uyu">Pesos Uruguayos (UYU)</option>
+          <option value="brl">Reales Brasileños (BRL)</option>
+        </select>
+      </div>
+      <div class="grupo-formulario">
+        <label class="etiqueta">Monto:</label>
+        <input class="entrada" type="number" id="monto" min="0" step="0.01">
+      </div>
+      <div class="grupo-formulario">
+        <label class="etiqueta">Selecciona la divisa de destino:</label>
+        <select class="seleccion" id="monedaA">
+          <option value="ars">Pesos Argentinos (ARS)</option>
+          <option value="usd">Dólares Estadounidenses (USD)</option>
+          <option value="eur">Euros (EUR)</option>
+          <option value="uyu">Pesos Uruguayos (UYU)</option>
+          <option value="brl">Reales Brasileños (BRL)</option>
+        </select>
+      </div>
+      <div>
+        <button class="boton" id="convertir">Convertir</button>
+      </div>
+      <div class="resultado" id="resultado"></div>
+    </div>
+    <button id="btnMostrarInstrucciones" class="boton-instrucciones">Instrucciones de uso</button>
+    <button id="btnCerrarSesion" class="boton-instrucciones">Cerrar Sesión</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="main.js"></script>
+</body>
+</html>

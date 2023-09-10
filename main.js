@@ -1,7 +1,7 @@
-// Cargar usuarios desde el almacenamiento local (si existen)
+// Cargar usuarios desde el almacenamiento local 
 let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-// Función para verificar si un usuario existe
+// verificar si un usuario existe
 function usuarioExiste(usuario, contrasena) {
   return usuarios.some(u => u.usuario === usuario && u.contrasena === contrasena);
 }
@@ -46,7 +46,7 @@ btnIniciarSesion.addEventListener('click', () => {
   }
 });
 
-// (Agregado a la lista de usuarios)
+// Agregado a la lista de usuarios
 const btnRegistrarse = document.getElementById('btnRegistrarse');
 const nuevoUsuarioInput = document.getElementById('nuevoUsuario');
 const nuevaContrasenaInput = document.getElementById('nuevaContrasena');
@@ -55,9 +55,9 @@ btnRegistrarse.addEventListener('click', () => {
   const nuevoUsuario = nuevoUsuarioInput.value;
   const nuevaContrasena = nuevaContrasenaInput.value;
 
-  // Validación de la contraseña
+  // Validació de la contraseña
   if (!validarContrasena(nuevaContrasena)) {
-    // Mostrar mensaje de error personalizado con SweetAlert2
+    // Mostrar mensaje de error 
     Swal.fire({
       icon: 'error',
       title: 'Error de registro',
@@ -78,33 +78,33 @@ btnRegistrarse.addEventListener('click', () => {
     return;
   }
 
-  // Agregar el nuevo usuario a la lista
+  // Agrega el nuevo usuario a la lista
   usuarios.push({ usuario: nuevoUsuario, contrasena: nuevaContrasena });
 
-  // Guardar la lista actualizada en el almacenamiento local
+  // Guardar la lista actualizada 
   localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-  // Utilizamos Swal.fire para mostrar una ventana modal de SweetAlert2
+  // 
   Swal.fire(
     'Registro exitoso',
     'Ahora puedes iniciar sesión.',
     'success'
   );
 
-  // Limpiar los campos de entrada
+  // Limpiar  entradas
   nuevoUsuarioInput.value = '';
   nuevaContrasenaInput.value = '';
 });
 
-// Función de validación de contraseña
+// validación de contraseña
 function validarContrasena(contrasena) {
   // La contraseña debe contener al menos una mayúscula y al menos un número
   return /[A-Z]/.test(contrasena) && /\d/.test(contrasena);
 }
 
-// Resto del código (conversor de divisas) permanece sin cambios
 
-// Define un objeto que mapea códigos de moneda a nombres
+
+// moneda a nombres
 const nombresMonedas = {
   ars: 'Pesos Argentinos (ARS)',
   usd: 'Dólares Estadounidenses (USD)',
@@ -113,7 +113,7 @@ const nombresMonedas = {
   brl: 'Reales Brasileños (BRL)'
 };
 
-// Obtén los elementos select de moneda desde el DOM
+// elementos select de moneda desde el DOM
 const seleccionMonedaDesde = document.getElementById('monedaDesde');
 const seleccionMonedaA = document.getElementById('monedaA');
 
@@ -135,7 +135,7 @@ const botonConvertir = document.getElementById('convertir');
 const entradaMonto = document.getElementById('monto');
 const resultadoDiv = document.getElementById('resultado');
 
-// Cargar tasas de cambio desde un archivo JSON local
+//  tasas de cambio desde JSON 
 fetch('tasas-de-cambio.json')
   .then(response => response.json())
   .then(data => {
@@ -155,7 +155,7 @@ fetch('tasas-de-cambio.json')
         const montoConvertido = monto * tasasDeCambio[monedaDesde][monedaA];
         resultadoDiv.textContent = `${monto.toFixed(2)} ${monedaDesde.toUpperCase()} equivalen a ${montoConvertido.toFixed(2)} ${monedaA.toUpperCase()}`;
         
-        // Guardar resultado en el almacenamiento local 
+        // guardar resultado en el almacenamiento local 
         const resultadoJSON = JSON.stringify({
           montoOriginal: monto.toFixed(2),
           monedaDesde: monedaDesde.toUpperCase(),
@@ -168,7 +168,7 @@ fetch('tasas-de-cambio.json')
       }
     });
 
-    // Mostrar el resultado almacenado en el almacenamiento local 
+    // resultado almacenado 
     window.addEventListener('load', () => {
         const resultadoJSON = localStorage.getItem('resultadoConversión');
         if (resultadoJSON) {
@@ -188,7 +188,7 @@ btnCerrarSesion.addEventListener('click', () => {
   loginForm.style.display = 'block';
   conversor.style.display = 'none';
 
-  // SweetAlert2 para mostrar un mensaje de cierre de sesión
+  //  mensaje de cierre de sesión
   Swal.fire({
     title: 'Cierre de Sesión',
     text: 'Has cerrado sesión exitosamente.',
@@ -197,7 +197,7 @@ btnCerrarSesion.addEventListener('click', () => {
   });
 });
 
-// Botón para mostrar instrucciones
+// Botón instrucciones
 document.getElementById('btnMostrarInstrucciones').addEventListener('click', () => {
   Swal.fire({
     title: 'Instrucciones Personalizadas',
@@ -211,8 +211,8 @@ document.getElementById('btnMostrarInstrucciones').addEventListener('click', () 
       <h3>4. Elige la divisa a la que quieres convertir.</h3>
       <h3>5. Click en "CONVERTIR".</h3>
     `,
-    width: 600, // Ancho personalizado
-    padding: '3em', // Relleno personalizado
+    width: 600, 
+    padding: '3em',
     customClass: {
       title: 'custom-title', 
       htmlContainer: 'custom-html-container'
@@ -224,6 +224,6 @@ document.getElementById('btnMostrarInstrucciones').addEventListener('click', () 
       no-repeat
     `,
     showConfirmButton: false, // Oculta el botón "Confirmar"
-    allowOutsideClick: true // Permite cerrar haciendo clic fuera de la ventana emergente
+    allowOutsideClick: true // Permite cerrar haciendo clic fuera de la ventana 
   });
 });

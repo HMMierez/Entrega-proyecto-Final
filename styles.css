@@ -67,7 +67,7 @@ body {
     margin-top: 20px;
   }
 
-/* Estilos para los formularios */
+
 #loginForm,
 #registroForm {
   text-align: center;
@@ -127,14 +127,14 @@ body {
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
-    margin-top: 20px; /* Espacio entre el botón y otros elementos */
+    margin-top: 20px;
 }
 
 .boton-instrucciones:hover {
     background-color: #0056b3;
 }
 
-/* Estilos para el cuadro de instrucciones (ventana modal) */
+/* cuadro de instrucciones */
 .custom-title {
     font-size: 24px;
     color: #716add;
@@ -144,7 +144,7 @@ body {
     font-size: 16px;
     color: #333;
     background: #fff;
-    padding: 20px; /* Espacio interior del cuadro */
+    padding: 20px; 
     border-radius: 5px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
 }
